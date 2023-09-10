@@ -33,7 +33,7 @@ class cardNews extends HTMLElement{
         cardRight.setAttribute('class', 'card__right');
         
         const imagem = document.createElement('img');
-        imagem.src = this.getAttribute('link-image') || '/Desafio-1/assets/imagens/foto-default.webp';
+        imagem.src = this.getAttribute('link-image') || '/Desafio-1/assets/imagens/foto-default.jpg';
 
         cardRight.appendChild(imagem);
 
@@ -44,6 +44,38 @@ class cardNews extends HTMLElement{
 
     style(){
         const style = document.createElement('style');
+        style.textContent = `
+            .card{
+                width: 80%;
+                border: 1px solid gray;
+                display: flex;
+                flex-direction: row;
+                -webkit-box-shadow: 6px 8px 18px 4px rgba(0,0,0,0.65); 
+                box-shadow: 6px 8px 18px 4px rgba(0,0,0,0.65);
+                justify-content: space-between;
+            }
+
+
+            .card__left{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 10px;
+            }
+            .card__left > span{
+                font-weight: 400;
+            }
+            .card__left > a{
+                margin-top: 15px;
+                font-size: 25px;
+                color: black;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .card__left > p{
+                color: rgb(70, 70, 70);
+            }
+        `
 
         return style;
     }
