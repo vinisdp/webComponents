@@ -15,8 +15,14 @@ class cardNews extends HTMLElement{
         cardLeft.setAttribute('class', 'card__left');
 
         const autor = document.createElement('span');
+        autor.textContent = 'By ' + (this.getAttribute('autor') || 'Anonymous');
+
         const titulo = document.createElement('a');
+        titulo.textContent = this.getAttribute('title');
+        titulo.href = this.getAttribute('link-url');
+
         const texto = document.createElement('p');
+        texto.textContent = this.getAttribute('content');
 
         cardLeft.appendChild(autor);
         cardLeft.appendChild(titulo);
@@ -27,7 +33,7 @@ class cardNews extends HTMLElement{
         cardRight.setAttribute('class', 'card__right');
         
         const imagem = document.createElement('img');
-        imagem.setAttribute('src','/Desafio-1/assets/imagens/darthVader.jpg');
+        imagem.src = this.getAttribute('link-image') || '/Desafio-1/assets/imagens/foto-default.webp';
 
         cardRight.appendChild(imagem);
 
@@ -37,7 +43,9 @@ class cardNews extends HTMLElement{
     }
 
     style(){
-        
+        const style = document.createElement('style');
+
+        return style;
     }
 
 }
